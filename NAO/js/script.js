@@ -19,7 +19,7 @@
   mobileMenu.className = 'mobile-menu';
   mobileMenu.setAttribute('aria-hidden', 'true');
 
-  const link = (href, label) => `<a href="${href}">${label}</a>`;
+  const link = (href, label) => `<a href="${href}">${label}<span>↗</span></a>`;
   const prefix = isGroup ? 'index.html' : '';
   const hrefFor = id => isGroup ? `${prefix}#${id}` : `#${id}`;
   const ctaHref = isGroup ? 'https://chat.whatsapp.com/SEU_LINK_AQUI' : 'grupo.html';
@@ -52,7 +52,6 @@
     mobileMenu.classList.add('open');
     backdrop.classList.add('open');
     body.classList.add('menu-open');
-    document.documentElement.classList.add('menu-open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     menuToggle?.classList.add('open');
     menuToggle?.setAttribute('aria-expanded', 'true');
@@ -61,7 +60,6 @@
     mobileMenu.classList.remove('open');
     backdrop.classList.remove('open');
     body.classList.remove('menu-open');
-    document.documentElement.classList.remove('menu-open');
     mobileMenu.setAttribute('aria-hidden', 'true');
     menuToggle?.classList.remove('open');
     menuToggle?.setAttribute('aria-expanded', 'false');
